@@ -5,7 +5,7 @@ Built with **Streamlit**, this app allows users to explore recent market activit
 
 ## 🌐 Live Demo
 Access the app instantly (no installation required):  
-[streamlit-app-url](https://streamlit-app-url.streamlit.app)
+[hdb-resale-analytics.streamlit.app](https://hdb-resale-analytics.streamlit.app/)
 
 Explore HDB resale trends, compare flat types, and analyze market activity directly in your browser.
 
@@ -78,7 +78,7 @@ Users can
 
 ### Option 1: Use the Live App
 Access the deployed application directly:  
-[streamlit-app-url](https://streamlit-app-url.streamlit.app)
+[hdb-resale-analytics.streamlit.app](https://hdb-resale-analytics.streamlit.app/)
 
 ---
 
