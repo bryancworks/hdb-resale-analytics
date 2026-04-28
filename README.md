@@ -1,39 +1,52 @@
 # 🏠 HDB Resale Data Analysis (Singapore)
-A Python project that fetches, filters, and visualizes Singapore HDB resale transaction data directly from [data.gov.sg](https://data.gov.sg/) public API.
+An interactive data application that analyzes Singapore HDB resale transactions using data directly from [data.gov.sg](https://data.gov.sg/) public API.
 
-This project showcases API integration, data analysis, and interactive CLI features — all within a clean, menu-driven interface.
+Built with **Streamlit**, this app allows users to explore recent market activity through dynamic filtering, summary insights, and visualizations.
 
-## ⚙️ Features
-- **Dynamic Data Fetching**
+## 🌐 Live Demo
+Access the app instantly (no installation required):  
+[streamlit-app-url](https://streamlit-app-url.streamlit.app)
 
-     Pulls resale data for a custom number of past months via the public API.
+Explore HDB resale trends, compare flat types, and analyze market activity directly in your browser.
 
-- **Interactive CLI Menu**
+## 🔍 Overview
+This project fetches recent HDB resale transaction data from a public API and transforms it into an intuitive, user-friendly interface.
 
-    Navigate easily through options to explore and visualize data.
+Users can
+- Explore resale price trends over recent months
+- Compare average prices across flat types
+- Analyze transaction activity by town
+- Interact with data dynamically through filters
 
-- **Filtering Options**
+## 🚀 Features
+### Interactive Filters
+- Adjustable **lookback period** (1–5 months)
+- Filter by **town** and **flat type**
 
-    Filter transactions by **town**, **flat type**, or **month**.
+### Summary Snapshot
+- Dynamic time range display based on selected lookback period
+- Highest transaction
+- Average resale price by town (bar chart)
 
-- **Summary Snapshot**
+### Price Trends by Flat Type
+- Line chart showing **average resale price trends** across flat types
+- Clean visualization for comparing price movements over time
 
-    Displays:
-    - Average resale price grouped by town
-    - Highest-priced transaction overall
+### Data Handling & Reliability 
+- API integration with retry handling for rate limits
+- Graceful fallback for partial data scenarios
+- Caching by `@st.cache_data` to reduce API load and improve performance
 
-- **Town Ranking**
-
-    Lists the **Top 5 Towns** by transaction volume.
-
-- **Chart Comparison**
-
-    Generates bar charts showing average price trends across all flat types.
+## 🔧 Tech Stack
+- Python 3.11+
+- Streamlit (UI framework)
+- pandas (data processing)
+- requests (API calls)
 
 ## 📦 Installation
 1. Install Python
 
-    Ensure **Python 3.10+** is installed.
+    Ensure **Python 3.11+** is installed.
     
     You can check your version with `python --version`.
 
@@ -47,7 +60,7 @@ This project showcases API integration, data analysis, and interactive CLI featu
     cd hdb-resale-analytics
     ```
 
-3. (Optional but recommended) Create a virtual environment
+3. Create a virtual environment (recommended)
 
     ```
     python -m venv venv
@@ -62,32 +75,31 @@ This project showcases API integration, data analysis, and interactive CLI featu
     ```
 
 ## 💻 Usage
-Run the main script with an optional number of months to fetch:
 
-_Range accepts 1-5 months. Default is 3 months if not specified._
+### Option 1: Use the Live App
+Access the deployed application directly:  
+[streamlit-app-url](https://streamlit-app-url.streamlit.app)
 
+---
+
+### Option 2: Run locally
 ```
-python main.py --months 3
+streamlit run app.py
 ```
-Once loaded, navigate the interactive menu:
-```
-1. Apply filters
-2. View summary snapshot
-3. View town ranking
-4. Chart comparison
-5. Exit
-```
+It should open the site automatically, else 
 
-## 🔧 Tech Stack
-- Python 3.10+
-- Libraries: `pandas`, `requests`, `matplotlib`, `argparse`
+## ⚠️ Notes
+- This app is deployed using **Streamlit Community Cloud**
+- Data is sourced from a public API and may be subject to:
+    - rate limits
+    - temporary unavailability
+- In such cases, the app will:
+    - retry requests
+    - gracefully handle incomplete data
 
-## 📈 Example Output
-Summary Snapshot
-
-Town            | Price (S$)
---------------- | ---------------
-CENTRAL AREA    | 950143
-BISHAN          | 867430
-BUKIT MERAH     | 752819
-...             | ...
+## 🎯 Key Highlights
+This project demonstrates:
+- API integration with real-world constraints (rate limiting)
+- Data transformation and aggregation using pandas
+- Building interactive data applications with Streamlit
+- Designing user-friendly data exploration tools

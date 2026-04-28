@@ -27,3 +27,4 @@ dist/
 # Environment and local configs
 .env
 *.json
+.streamlit/secrets.toml
